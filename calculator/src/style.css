@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Graduate');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html{
+    font-size:13px;
+    font-family:'Poppins';
+}
+
+h4{
+  display:inline-block;
+  margin:0;
+  margin-left:0.5rem;
+}
+sup{font-size:1rem;color:#4E0BCB}
+
+/*Starting with the basic structure of the calculator*/
+
+
+.calculator-container{
+    padding-top:1rem;
+    width:20rem;
+    height:40rem;
+    border-radius:15px;
+    position:absolute;
+    left:50%;
+    top:58%;
+    transform:translate(-50%, -50%);
+    display:grid;
+    grid-template:25% 10% 60% / 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.history{
+    font-family:verdana;
+    position:relative;
+    grid-row:1;
+    grid-column:1;
+    list-style: none;
+    text-align:right;
+    font-size:1.1rem;
+    overflow-y:hidden;
+    padding-right:1rem;
+}
+
+.history ul{
+  text-align:right;
+  list-style:none;
+  position:absolute;
+  right:1rem;
+  bottom:0;
+}
+
+.display{
+    grid-row:2;
+    grid-column:1;
+    height:100%;
+    font-size:1.8rem;
+    text-align:right;
+    padding-right:1rem;
+    font-family:'Graduate';
+}
+
+.button-section{
+    grid-row:3;
+    grid-column:1;
+}
+
+.button-section button{
+    border-radius:25px;
+    border:0px;
+    font-size:1.3rem;
+    font-family:'Graduate';
+    transition:all 0.3s ease;
+}
+
+.button-section button:focus{
+    outline:none;
+}
+
+.button-section #mode{
+    margin-left:1.5rem;
+    width:7.5rem;
+    margin-bottom:0.5rem;
+}
+
+.button-container{
+    padding:0.5rem 1.5rem;
+    display:grid;
+    grid-template-rows:3fr 1fr;
+    height:120%;
+    grid-template-columns:3fr 1fr;
+    grid-gap:0.6rem;
+}
+
+.btn-section-left{
+    grid-row:1/2;
+    grid-column:1;
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template:repeat(6, 1fr)/repeat(3, 2fr);
+    grid-gap:0.6rem;
+}
+
+
+.btn-section-left #clear{
+    grid-row:1;
+    grid-column:1;
+    background:linear-gradient(145deg, #E37D2F 40%, #e29a64);
+    font-weight:700;
+    color:#E4E7E8;
+}
+
+
+
+.btn-section-right{
+    grid-row:1/2;
+    grid-column:2;
+    display:grid;
+    grid-template-rows:repeat(6, 1fr);
+    height:100%;
+    width:100%;
+    grid-gap:0.6rem;
+}
+
+.btn-section-right .equals-to{
+    grid-row:5/7;
+    background:linear-gradient(145deg,#4E0BCB 50%,#6f3bce);
+    font-weight:700;
+    color:#909090;
+}
+
+@media (max-width:768){
+    html{
+        font-size:10px;
+    }
+}
+
+/*Designing the black theme of the calculator*/
+
+.calculator-container-dark{
+    background:linear-gradient(170deg,#505050, #0000 60%);
+  box-shadow:3px 3px 10px 1px black;
+  color:white;
+}
+
+.number-btn-dark{
+    background:linear-gradient(145deg, #0000 45%, #505050);
+    color:#909090;
+}
+
+.button-dark{
+    box-shadow:2px 2px 5px 0 black,
+                -1px -1px 5px 0 #505050;
+}
+
+.button-dark:active{
+    box-shadow:inset 2px 2px 5px 0 black,
+                inset -1px -1px 5px 0 #505050;
+
+}
+
+.primary-operator-dark{
+    background:linear-gradient(145deg, #270666 40%,#2c1852);
+    color:#909090;
+}
+
+.secondary-operator-dark{
+    color:#E37D2F;
+    background:linear-gradient(145deg, #633715 40%, #724e32);
+}
+
+.delete-dark{
+    color:#909090;
+    background:linear-gradient(145deg, #151515 45%, #404040);
+}
+
+.switch-mode-dark{
+    padding:0.5rem;
+    color:#909090;
+    background:linear-gradient(145deg, #0000 45%, #505050)
+}
+
+/*Designing white theme of the calculator*/
+
+.calculator-container-light{
+    background:#E4E7E8;
+    box-shadow:3px 3px 10px 1px black;
+}
+
+.number-btn-light{
+    background:linear-gradient(145deg, #d7d9da 40%, #E4E7E8);
+    color:#909090;
+}
+
+.button-light{
+    box-shadow:2px 2px 5px 0 black,
+                -2px -2px 5px 0 white;
+}
+
+.button-light:active{
+    box-shadow:inset 2px 2px 5px 0 black,
+                inset -2px -2px 5px 0 white;
+
+}
+
+.primary-operator-light{
+    background:linear-gradient(145deg, #c4acf1 40%,#e0d3f8);
+    color:purple;
+}
+
+.secondary-operator-light{
+    color:#E37D2F;
+    background:linear-gradient(145deg, #fad5b8 40%, #f8e2d0);
+}
+
+.delete-light{
+    color:#909090;
+    background:linear-gradient(145deg, #bebebe 45%, #f8f8f8);
+}
+
+.switch-mode-light{
+    padding:0.5rem;
+    color:#909090;
+    background:linear-gradient(145deg, #d9dadb 45%, #ebecec)
+}
+
+/*Designing the glassmorhpism theme*/
+
+.calculator-container-glass{
+    background:rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+  color:white
+    
+}
+
+.number-btn-glass{
+    background:rgba(255, 255, 255, 0.1);
+    color:#282828;
+}
+
+.button-glass{
+    background:rgba(255, 255, 255, 0.2);
+}
+
+.button-glass:active{
+    background:rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    transform:scale(1.05);
+}
+
+.primary-operator-glass{
+    background:rgba(255, 255, 255, 0.3);
+    color:purple;
+}
+
+.secondary-operator-glass{
+    color:#E37D2F;
+    background:rgba(255, 255, 255, 0.2);
+}
+
+.delete-glass{
+    color:#151515;
+    background:rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.switch-mode-glass{
+    padding:0.5rem;
+    color:#151515;
+    background:rgba(255, 255, 255, 0.2);
+}
